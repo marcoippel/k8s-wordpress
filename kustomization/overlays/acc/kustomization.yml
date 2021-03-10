@@ -4,4 +4,4 @@ namespace: acc
 bases:
 - ../../base
 patchesStrategicMerge:
-- deploy_wordpress_patch.yaml
+- namespace_patch.yaml

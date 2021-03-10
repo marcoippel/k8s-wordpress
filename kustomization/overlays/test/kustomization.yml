@@ -4,5 +4,4 @@ namespace: test
 resources:
 - ../../base
 patchesStrategicMerge:
-#- deploy_wordpress_patch.yaml
-#- ingress_patch.yaml
+- namespace_patch.yaml
