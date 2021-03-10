@@ -10,3 +10,4 @@ resources:
 - pvc_wordpress.yaml
 - svc_mysql.yaml
 - svc_wordpress.yaml
+- ns_prod.yaml
