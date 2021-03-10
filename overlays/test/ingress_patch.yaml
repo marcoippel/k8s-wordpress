@@ -1,0 +1,7 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: demo
+spec:
+  rules:
+  - host: test.westeurope.cloudapp.azure.com

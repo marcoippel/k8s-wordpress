@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  template:
+    spec:
+      containers:
+      - name: wordpress
+        ports:
+        - name: wordpress
+          containerPort: 85
+        - $patch: delete
+          containerPort: 80
