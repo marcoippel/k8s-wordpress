@@ -8,7 +8,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: azurefile
+  storageClassName: default
   resources:
     requests:
       storage: 20Gi
