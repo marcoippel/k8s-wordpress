@@ -4,12 +4,12 @@ namespace: my-namespace
 namePrefix: dev-
 nameSuffix: "-001"
 resources:
-# - db_password.yaml
-# - deploy_mysql.yaml
+- db_password.yaml
+- deploy_mysql.yaml
 - deploy_wordpress.yaml
 - ingress.yaml
-# - namespace.yaml
-# - pvc_mysql.yaml
-# - pvc_wordpress.yaml
-# - svc_mysql.yaml
-# - svc_wordpress.yaml
+- namespace.yaml
+- pvc_mysql.yaml
+- pvc_wordpress.yaml
+- svc_mysql.yaml
+- svc_wordpress.yaml
