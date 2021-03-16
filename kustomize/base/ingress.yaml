@@ -6,7 +6,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /wordpress
         backend:
           serviceName: wordpress
           servicePort: 80
