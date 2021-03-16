@@ -4,9 +4,10 @@ metadata:
   name: ingress
 spec:
   rules:
-  - http:
+  - host: wordpress.k8s.local
+    http:
       paths:
-      - path: /wordpress
+      - path: /
         backend:
           serviceName: wordpress
           servicePort: 80
