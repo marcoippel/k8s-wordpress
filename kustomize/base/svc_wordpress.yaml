@@ -4,7 +4,6 @@ metadata:
   name: wordpress
   labels:
     app: wordpress
-
 spec:
   ports:
     - port: 80
