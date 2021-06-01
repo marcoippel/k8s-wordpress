@@ -3,5 +3,11 @@ kind: Kustomization
 namespace: dev
 resources:
 - ../../base
+namePrefix:
+  dev-
+nameSuffix:
+  -v2
+commonLabels:
+  app: wordpress
 patchesStrategicMerge:
 - ingress.yaml

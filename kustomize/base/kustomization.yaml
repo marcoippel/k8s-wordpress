@@ -11,3 +11,6 @@ resources:
 - svc_mysql.yaml
 - svc_wordpress.yaml
 - ns_prod.yaml
+images:
+- name: wordpress
+  newTag: "1.2"
