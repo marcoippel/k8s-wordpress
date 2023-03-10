@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: wordpress.k8s.local
+    - host: kubernetes.docker.internal
       http:
         paths:
           - path: /
