@@ -5,8 +5,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   rules:
-    - host: kubernetes.docker.internal
+    - host: wordpress.cloudrepublic.internal
       http:
         paths:
           - path: /
