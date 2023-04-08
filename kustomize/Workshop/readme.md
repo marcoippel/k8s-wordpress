@@ -1,28 +1,28 @@
-```
-kubectl create ns study
-```
+# Voer de volgende stappen eerst uit voor je begint
 
-Install nginx controller in Docker Desktop
+## Install nginx controller in Docker Desktop
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.6.4/deploy/static/provider/aws/deploy.yaml
 ```
 
-```
-kubectl apply -f ./k8s
-```
-
-Show everything that is listning on port 80:
+## Open de hostfile op je computer en voeg hier de volgende regel aan toe
 
 ```
-netstat -ano | findstr ":80" | findstr "LISTENING"
+127.0.0.1 wordpress.cloudrepublic.internal
 ```
 
-```
-kubectl config set-credentials pod-deployment-viewer --token=$(kubectl describe secret -n study $(kubectl get secret -n study | grep pod-deployment-viewer-account | awk '{print $1}') | grep token: | awk '{print $2}')
-kubectl config set-context pod-deployment-viewer-context --user=pod-deployment-viewer --namespace=study
-kubectl config use-context pod-deployment-viewer-context
-```
+Stappenplan:
+
+1. Maak een namespace aan.
+2. Maak een pvc aan voor de mysql deployment
+3. Maak een pvc aan voor de wordpress bestanden mount deze op pad "/var/www/html"
+4. Maak een secret aan voor de SA user van de MySql deployment
+5. Maak een Wordpress deployment aan
+6. Maak een MySql deployment aan
+7. Maak de services aan voor de Wordpress en Mysql deployments
+8. Maak een ingress aan met de url wordpress.cloudrepublic.internal
+9. Maak een Role aan welke alleen rechten heeft om de pods en deplouments in de door jou aangemaakte namespace te zien
 
 ```
 <!-- Set the credentials -->
@@ -46,6 +46,10 @@ Troubleshooting
 
 - Ingress werkt niet:
   - luistert er niets op poort 80
+
+    ```
+    netstat -ano | findstr ":80" | findstr "LISTENING"
+    ```
 
 - Inloggen werkt niet met het account pod-deployment-viewer
   - kijk naar de kubeconfig of deze goed staat en of er een token in zit
